@@ -1,26 +1,30 @@
 <?php
+namespace App\Controller;
 
 interface Exportable
 {
-    public  static function export();
+    public function export();
 }
 
 interface Importable
 {
-    public  static function import();
+    public function import();
 }
 
 abstract class Exporter implements Exportable
 {
     protected $data;
-    protected $format = 'txt';
+    protected $format;
 
     public  function __construct($data) {
         $this->data = $data;
+        if(!$this->isvalid()){
+            die("Invalid Data!");
+        }
     }
 
-    public static function isValid() {
-        foreach(self::$data as $field) {
+    public  function isValid() {
+        foreach($this->data as $field) {
             if (!empty($field)) {
                 return true;
             }
