@@ -1,0 +1,19 @@
+{
+    "name": "zakaria75/project-exporter",
+    "description": "autoloader",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zakaria Abbasi",
+            "email": "zakaria_abbasi@yahoo.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
