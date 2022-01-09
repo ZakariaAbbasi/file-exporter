@@ -19,7 +19,8 @@ abstract class Exporter implements Exportable
     public  function __construct($data) {
         $this->data = $data;
         if(!$this->isvalid()){
-            die("Invalid Data!");
+            echo"Invalid Data!";
+            die;
         }
     }
 

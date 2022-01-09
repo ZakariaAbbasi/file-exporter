@@ -7,17 +7,13 @@ class TextExporter extends Exporter
 
     public  function export() {
 
-        $file_name = $this->format."-flie.".$this->format;
+        $file_name = $this->format."-file.".$this->format;
         $file_path = __DIR__."/files/$file_name";
-         if (!file_exists($file_path)) {
-            file_put_contents($file_path,"{$this->data['title']} - {$this->data['content']}\n");
+        
+            file_put_contents($file_path,"{$this->data['title']} - {$this->data['content']}\n", FILE_APPEND);
             echo"$file_name successfully Created!\n";
             return;
-         }
-         $fh = fopen($file_path, "a");
-         fwrite($fh, "{$this->data['title']} - {$this->data['content']}\n");
-         echo"Write successfully in Flie!\n";
-         fclose($fh);
+         
     
     }
 }
