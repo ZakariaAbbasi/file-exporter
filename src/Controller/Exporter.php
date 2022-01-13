@@ -1,15 +1,8 @@
 <?php
 namespace App\Controller;
 
-interface Exportable
-{
-    public function export();
-}
-
-interface Importable
-{
-    public function import();
-}
+use App\Contract\Exportable;
+use App\Validations\ExportValidation;
 
 abstract class Exporter implements Exportable
 {
@@ -17,20 +10,9 @@ abstract class Exporter implements Exportable
     protected $format;
 
     public  function __construct($data) {
+        
         $this->data = $data;
-        if(!$this->isvalid()){
-            echo"Invalid Data!";
-            die;
-        }
-    }
-
-    public  function isValid() {
-        foreach($this->data as $field) {
-            if (!empty($field)) {
-                return true;
-            }
-        }
-        return false;
+        ExportValidation::isValid($this->data);
 
     }
 

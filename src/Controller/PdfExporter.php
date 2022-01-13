@@ -17,7 +17,6 @@ class PdfExporter extends Exporter
         $this->pdf->SetWatermarktext('Test');
         $this->pdf->showWatermarkText=true;
         $this->pdf->Output($file_path);
-        echo "$file_name successfully Created!\n";
-        return ;
+        dd("$file_name successfully Created!\n");
     }
 }

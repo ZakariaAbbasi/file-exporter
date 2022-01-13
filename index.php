@@ -1,5 +1,4 @@
 <?php 
-
 include "process.php";?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,6 +86,7 @@ include "process.php";?>
             <input type="text" name="title" placeholder="Title Here">
             <textarea name="content" placeholder="Content Here" style="height: 100px"></textarea>
             <select name="format">
+                <option disabled selected>Select Format File</option>
                 <option value="Text">Text File</option>
                 <option value="Pdf">Pdf Format</option>
                 <option value="Json">Json File</option>
